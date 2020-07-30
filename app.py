@@ -23,6 +23,8 @@ def read_csv(path: str, filename: str) -> pd.DataFrame:
     :return: dataset
     :rtype: pd.DataFrame
     """
+    # ETLで言うとExtractです
+    logger.debug(f'read_csv: {path}/{filename}')
     df = pd.read_csv(f"{path}/{filename}")
     return df
 
@@ -35,6 +37,7 @@ def calc_batting_stats(df: pd.DataFrame) -> pd.DataFrame:
     :return: dataset
     :rtype: pd.DataFrame
     """
+    # ETLで言うとTransformです
     logger.debug('calc_batting_stats')
     _df = df
     _df['BA'] = round(df['H'] / df['AB'], 3)
@@ -54,6 +57,7 @@ def join_stats(df_player: pd.DataFrame, df_bats: pd.DataFrame) -> pd.DataFrame:
     :return: merged data
     :rtype: pd.DataFrame
     """
+    # ETLで言うとTransformです
     logger.debug('join_stats')
     _df = pd.merge(df_bats, df_player, on='playerID')
     return _df
@@ -67,6 +71,7 @@ def to_csv(df: pd.DataFrame, run_datetime: datetime, index=False):
     :param run_datetime: datetime
     :param index: include dataframe index(default: False)
     """
+    # ETLで言うとLoadです
     logger.debug('to_csv')
     df.to_csv(f"{run_datetime.strftime('%Y%m%d')}_stats.csv", index=index)
 
