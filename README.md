@@ -2,7 +2,9 @@
 
 This repository contains **Dockerfile** of Log ETL for [prefect](https://github.com/PrefectHQ/prefect).
 
-[baseballdatabank](https://github.com/chadwickbureau/baseballdatabank) のCSVを取り込んでデータ生成をする.
+![](img/workflow.png)
+
+[baseballdatabank](https://github.com/chadwickbureau/baseballdatabank) のCSVを取り込んでデータ生成をするsample.
 
 ## Informations
 
