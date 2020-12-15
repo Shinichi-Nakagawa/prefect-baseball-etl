@@ -28,7 +28,7 @@ $ pwd  # このpathを使います
 ```bash
 $ python3 -m venv venv
 $ source venv/bin/activate
-(venv) $ poetry install
+(venv) $ pip install -r requirements.txt
 ```
 
 ## Usage
